@@ -1,0 +1,21 @@
+node('Linux') {
+   
+   def workspace
+
+  stage('clone source code') {
+ 
+         checkout scm
+         notifystash()
+
+  }
+
+  stage(build) {
+
+
+     sh "mvn clean install"
+
+}
+
+
+
+}
