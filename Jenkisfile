@@ -17,5 +17,10 @@ node('Linux') {
 }
 
 
+  stage('Quality analysis'){
+
+   sh 'mvn sonar:sonar'
+
+}
 
 }
