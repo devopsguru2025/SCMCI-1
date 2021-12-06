@@ -1,6 +1,6 @@
 node('Linux') {
    
-   def workspace
+   def workspace-1
 
   stage('clone source code') {
  
@@ -20,6 +20,14 @@ node('Linux') {
   stage('Quality analysis'){
 
    sh 'mvn sonar:sonar'
+
+}
+
+
+
+  stage(build image){
+
+    sh 'docker build -t <name> .'
 
 }
 
